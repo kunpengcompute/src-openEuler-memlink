@@ -4,22 +4,25 @@
 Summary: UVP memory overcommit services for euleros
 Name: memlinkd
 Version: 1.0
-Release: 208
+Release: 209
 License: MulanPSL2
 ExclusiveArch:  %ix86 x86_64 aarch64
 Group: System Environment/Daemons
 Source0: memlinkd.tar.bz2
 
-BuildRequires : libvirt libvirt-devel libboundscheck systemd-units
-BuildRequires : gnutls gnutls-devel cmake CUnit-devel
-Requires      : libvirt libboundscheck systemd-units
-Requires(post): systemd-units
+Patch0001: eat-add-integration-test-suite-for-memlinkd.patch
 
-%description
-UVP memory overcommit services for euleros
+BuildRequires: libvirt libvirt-devel libboundscheck systemd-units
+BuildRequires: gnutls gnutls-devel cmake CUnit-devel
+Requires: libvirt libboundscheck systemd-units
+Requires(post): systemd-units
 
 %prep
 %setup -q -n src
+%patch -P 1 -p1
+
+%description
+UVP memory overcommit services for euleros
 
 %build
 rm -rf build
@@ -68,6 +71,12 @@ if [ "$1" -ge 1 ]; then
 fi
 
 %changelog
+* Tue Apr 21 2026 Leizongkun<leizongkun@huawei.com> - 1.0-209
+- Type:feature
+- CVE:NA
+- SUG:NA
+- DESC:Add integration test suite for memlinkd
+
 * Tue Aug 26 2025 Leizongkun<leizongkun@huawei.com> - 1.0-208
 - Type:feature
 - CVE:NA
