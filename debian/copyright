@@ -1,0 +1,9 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: memlinkd
+Source: https://gitee.com/openeuler/memlink
+
+Files: *
+Copyright: 2025 Huawei Technologies Co., Ltd.
+License: MulanPSL-2.0
+
+License: MulanPSL-2.0

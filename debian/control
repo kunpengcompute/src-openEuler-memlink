@@ -1,0 +1,18 @@
+Source: memlinkd
+Section: admin
+Priority: optional
+Maintainer: Leizongkun <leizongkun@huawei.com>
+Build-Depends: debhelper-compat (= 12),
+               cmake,
+               libboundscheck-dev,
+               libgnutls28-dev,
+Standards-Version: 4.6.0
+Homepage: https://gitee.com/openeuler/memlink
+
+Package: memlinkd
+Architecture: arm64
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+         libboundscheck
+Description: UVP memory overcommit services for euleros
+ UVP memory overcommit services for euleros.

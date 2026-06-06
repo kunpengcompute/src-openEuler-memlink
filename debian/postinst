@@ -1,0 +1,22 @@
+#!/bin/sh
+set -e
+
+#DEBHELPER#
+
+case "$1" in
+    configure)
+        if [ -z "$2" ]; then
+            deb-systemd-invoke disable memlinkd.service >/dev/null 2>&1 || true
+        else
+            deb-systemd-invoke try-restart memlinkd.service >/dev/null 2>&1 || true
+        fi
+    ;;
+    abort-upgrade|abort-remove|abort-deconfigure)
+    ;;
+    *)
+        echo "postinst called with unknown argument \`$1'" >&2
+        exit 1
+    ;;
+esac
+
+exit 0
