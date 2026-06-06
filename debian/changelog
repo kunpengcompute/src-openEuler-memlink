@@ -1,0 +1,5 @@
+memlinkd (1.0-208) unstable; urgency=medium
+
+  * Add init code of memlink
+
+ -- Leizongkun <leizongkun@huawei.com>  Tue, 26 Aug 2025 16:00:00 +0800
